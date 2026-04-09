@@ -63,7 +63,7 @@
         color: #d474d3;
       }
 
-      /* PAGE SWITCHING — #home must be last div in HTML */
+      /* PAGE SWITCHING */
       .page {
         display: none;
       }
@@ -85,8 +85,9 @@
         display: none;
       }
 
-      /* NAV */
+      /* NAV — fixed width so it stays centred */
       nav {
+        width: 1440px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -135,6 +136,7 @@
 
       /* HERO */
       .hero {
+        width: 1440px;
         min-height: 720px;
         position: relative;
         padding-bottom: 80px;
@@ -231,11 +233,11 @@
 
       /* DESIGN IN ACTION */
       .section-design {
+        width: 1440px;
         padding: 80px 0 60px;
         text-align: center;
       }
 
-      /* centred container — fixes left-alignment on wide screens */
       .content-wrap {
         width: 1200px;
         margin: 0 auto;
@@ -347,11 +349,13 @@
 
       /* CTA + CONTACT */
       .section-cta {
+        width: 1440px;
         padding: 100px 0 40px;
         text-align: center;
       }
 
       .contact-section {
+        width: 1440px;
         padding: 20px 0 80px;
         display: flex;
         flex-direction: column;
@@ -466,7 +470,6 @@
         display: block;
       }
 
-      /* PROJECT OVERVIEW — plain text only */
       .project-overview {
         width: 1200px;
         margin: 0 auto 50px;
@@ -499,7 +502,6 @@
         line-height: 1.7;
       }
 
-      /* PROJECT SECTIONS */
       .project-section {
         width: 1200px;
         margin: 0 auto 16px;
@@ -567,7 +569,6 @@
         clear: both;
       }
 
-      /* PREV/NEXT */
       .project-nav {
         width: 1200px;
         margin: 60px auto 0;
@@ -624,25 +625,25 @@
             <div class="work-img-wrapper"><img src="works-mealmate.png" width="414" height="249" alt="Mealmate cover" /></div>
             <p class="work-title">Mealmate</p>
             <p class="work-desc">An all in one solution for university students looking to improve their cooking skills.</p>
-            <span class="work-arrow">&#x2192;</span>
+            <span class="work-arrow">→</span>
           </a>
           <a class="work-card" href="#visipal">
             <div class="work-img-wrapper"><img src="works-visipal.jpg" width="414" height="249" alt="Visipal cover" /></div>
             <p class="work-title">Visipal</p>
             <p class="work-desc">A Chrome extension that helps visually impaired students explore the web with clarity, confidence, and ease.</p>
-            <span class="work-arrow">&#x2192;</span>
+            <span class="work-arrow">→</span>
           </a>
           <a class="work-card" href="#overlap">
             <div class="work-img-wrapper"><img src="works-overlap.png" width="414" height="249" alt="Overlap cover" /></div>
             <p class="work-title">Overlap</p>
             <p class="work-desc">A remote-work platform that strengthens team connection and streamlines cross-time zone collaboration.</p>
-            <span class="work-arrow">&#x2192;</span>
+            <span class="work-arrow">→</span>
           </a>
           <a class="work-card" href="#ecobloom">
             <div class="work-img-wrapper"><img src="works-ecobloom.png" width="414" height="249" alt="Ecobloom cover" /></div>
             <p class="work-title">Ecobloom</p>
             <p class="work-desc">A gamified sustainability app that motivates users to build better environmental habits through challenges and rewards.</p>
-            <span class="work-arrow">&#x2192;</span>
+            <span class="work-arrow">→</span>
           </a>
         </div>
       </div>
@@ -674,7 +675,7 @@
           </div>
         </div>
         <div class="about-photo-wrap">
-          <img src="aly-photo-three.png" width="431" height="594" alt="Alyanna Fuentes smiling outdoors" />
+          <img src="aly-photo-3.png" width="431" height="594" alt="Alyanna Fuentes smiling outdoors" />
         </div>
       </div>
       <section class="section-cta">
@@ -721,7 +722,7 @@
         <img src="mealmate-image-one.png" width="1200" height="auto" alt="Mealmate screens" />
       </div>
       <div class="project-section">
-        <h2 class="project-section-title">AI Ingredient Detection &amp; Recipe Suggestor</h2>
+        <h2 class="project-section-title">AI Ingredient Detection & Recipe Suggestor</h2>
         <p class="project-section-text">Let's face it—our parents buy us groceries, but using them efficiently isn't always easy. To solve this, we designed a smart ingredient-detecting camera that generates personalized recipes based on difficulty and prep time.</p>
       </div>
       <div class="project-img">
@@ -746,8 +747,8 @@
         <p class="project-section-text">Building MealMate taught us that even simple daily decisions—like what to cook—can feel overwhelming for students navigating independence for the first time. By blending AI, community, and accessible design, we learned how powerful it can be to turn everyday challenges into opportunities for connection and confidence.</p>
       </div>
       <div class="project-nav">
-        <span class="project-nav-btn invisible">&#x2190; Previous</span>
-        <a href="#visipal" class="project-nav-btn">Next Work &#x2192;</a>
+        <span class="project-nav-btn invisible">← Previous</span>
+        <a href="#visipal" class="project-nav-btn">Next Work →</a>
       </div>
       <section class="section-cta">
         <h2 class="section-title">Ready to build something amazing?</h2>
@@ -831,8 +832,8 @@
         <p class="project-section-text">VisiPal showed me how meaningful it is to design for real, specific needs—especially for kids like Alex, who are curious, eager, and often overlooked in digital accessibility. By focusing on customization, clarity, and confidence, the project grew beyond a simple Chrome extension and became a way to help students feel seen, supported, and capable online. Ultimately, VisiPal is a reminder that empathetic, intentional design doesn't just solve problems—it opens doors.</p>
       </div>
       <div class="project-nav">
-        <a href="#mealmate" class="project-nav-btn">&#x2190; Previous Work</a>
-        <a href="#overlap" class="project-nav-btn">Next Work &#x2192;</a>
+        <a href="#mealmate" class="project-nav-btn">← Previous Work</a>
+        <a href="#overlap" class="project-nav-btn">Next Work →</a>
       </div>
       <section class="section-cta">
         <h2 class="section-title">Ready to build something amazing?</h2>
@@ -894,8 +895,8 @@
         <p class="project-section-text">Working on Overlap taught me how important it is to design tools that balance efficiency with genuine human connection. Remote teams don't just need clearer communication—they need spaces that help them understand each other, build trust, and collaborate confidently across time zones.</p>
       </div>
       <div class="project-nav">
-        <a href="#visipal" class="project-nav-btn">&#x2190; Previous Work</a>
-        <a href="#ecobloom" class="project-nav-btn">Next Work &#x2192;</a>
+        <a href="#visipal" class="project-nav-btn">← Previous Work</a>
+        <a href="#ecobloom" class="project-nav-btn">Next Work →</a>
       </div>
       <section class="section-cta">
         <h2 class="section-title">Ready to build something amazing?</h2>
@@ -959,8 +960,8 @@
         <p class="project-section-text">Working on EcoBloom showed me how powerful gamification can be when it's paired with real-world impact. I learned that students are far more motivated when sustainability feels fun, visual, and community-driven. Ultimately, this project reinforced that encouraging environmental change isn't just about tracking behavior—it's about sparking pride, connection, and a sense of belonging around a common goal.</p>
       </div>
       <div class="project-nav">
-        <a href="#overlap" class="project-nav-btn">&#x2190; Previous Work</a>
-        <span class="project-nav-btn invisible">Next Work &#x2192;</span>
+        <a href="#overlap" class="project-nav-btn">← Previous Work</a>
+        <span class="project-nav-btn invisible">Next Work →</span>
       </div>
       <section class="section-cta">
         <h2 class="section-title">Ready to build something amazing?</h2>
@@ -978,7 +979,7 @@
       </div>
     </div>
 
-    <!-- HOME —-->
+    <!-- HOME — MUST BE LAST -->
     <div id="home" class="page">
       <section class="hero">
         <div class="hero-photos">
@@ -987,9 +988,9 @@
         </div>
         <div class="hero-text">
           <p class="hero-label">This is Aly</p>
-          <h1 class="hero-title">Product Designer &amp;<br>Growth Marketer</h1>
+          <h1 class="hero-title">Product Designer &<br>Growth Marketer</h1>
           <p class="hero-subtitle">you can count on!</p>
-          <a href="#about" class="btn-about">About Me &#x2192;</a>
+          <a href="#about" class="btn-about">About Me →</a>
         </div>
       </section>
       <section class="section-design">
@@ -1006,25 +1007,25 @@
               <div class="work-img-wrapper"><img src="mealmate-cover.jpg" width="414" height="249" alt="Mealmate cover" /></div>
               <p class="work-title">Mealmate</p>
               <p class="work-desc">An all in one solution for university students looking to improve their cooking skills and make cooking a part of their busy lives.</p>
-              <span class="work-arrow">&#x2192;</span>
+              <span class="work-arrow">→</span>
             </a>
             <a class="work-card" href="#visipal">
               <div class="work-img-wrapper"><img src="visipal-cover.jpg" width="414" height="249" alt="Visipal cover" /></div>
               <p class="work-title">Visipal</p>
               <p class="work-desc">A Chrome extension that helps visually impaired students explore the web with clarity, confidence, and ease.</p>
-              <span class="work-arrow">&#x2192;</span>
+              <span class="work-arrow">→</span>
             </a>
             <a class="work-card" href="#overlap">
               <div class="work-img-wrapper"><img src="overlap-cover.jpg" width="414" height="249" alt="Overlap cover" /></div>
               <p class="work-title">Overlap</p>
               <p class="work-desc">A remote-work platform that strengthens team connection and streamlines cross-time zone collaboration.</p>
-              <span class="work-arrow">&#x2192;</span>
+              <span class="work-arrow">→</span>
             </a>
             <a class="work-card" href="#ecobloom">
               <div class="work-img-wrapper"><img src="ecobloom-cover.jpg" width="414" height="249" alt="Ecobloom cover" /></div>
               <p class="work-title">Ecobloom</p>
               <p class="work-desc">A gamified sustainability app that motivates users to build better environmental habits through challenges and rewards.</p>
-              <span class="work-arrow">&#x2192;</span>
+              <span class="work-arrow">→</span>
             </a>
           </div>
         </div>
