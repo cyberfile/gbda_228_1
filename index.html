@@ -1,1 +1,1381 @@
-<h1>Hello World Wide Web!</h1>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1440" />
+    <title>Alyanna Fuentes — Portfolio</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Instrument Sans', sans-serif;
+        font-size: 16px;
+        line-height: 1.5;
+        background-color: #ffffff;
+        color: #000000;
+        width: 1440px;
+        margin: 0 auto;
+      }
+
+      h1,
+      h2 {
+        font-family: 'Instrument Serif', serif;
+        font-style: italic;
+        color: #241a76;
+        margin-bottom: 12px;
+      }
+
+      h1 {
+        font-size: 64px;
+        line-height: 1.1;
+      }
+
+      h2 {
+        font-size: 40px;
+      }
+
+      h3 {
+        font-family: 'Instrument Sans', sans-serif;
+        font-weight: 600;
+        font-size: 32px;
+        color: #454545;
+        margin-bottom: 16px;
+      }
+
+      p {
+        font-family: 'Instrument Sans', sans-serif;
+        font-size: 20px;
+        color: #454545;
+        line-height: 1.7;
+        margin-bottom: 16px;
+      }
+
+      a:link {
+        color: #241a76;
+        text-decoration: none;
+      }
+
+      a:visited {
+        color: #241a76;
+        text-decoration: none;
+      }
+
+      a:hover {
+        color: #d474d3;
+      }
+
+      a:active {
+        color: #d474d3;
+        opacity: 0.7;
+      }
+
+      .page {
+        display: none;
+      }
+
+      .page:target {
+        display: block;
+      }
+
+      #home {
+        display: block;
+      }
+
+      #works:target~#home,
+      #about:target~#home,
+      #mealmate:target~#home,
+      #visipal:target~#home,
+      #overlap:target~#home,
+      #ecobloom:target~#home {
+        display: none;
+      }
+
+      nav {
+        width: 1440px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 200px;
+        padding: 28px 0 20px;
+        position: sticky;
+        top: 0;
+        background-color: #ffffff;
+        border-bottom: 1px solid #f0f0f0;
+        z-index: 100;
+      }
+
+      .nav-logo {
+        font-family: 'Instrument Serif', serif;
+        font-style: italic;
+        font-size: 32px;
+        color: #d474d3;
+        text-decoration: none;
+        transition: opacity 0.2s;
+      }
+
+      .nav-logo:link {
+        color: #d474d3;
+      }
+
+      .nav-logo:visited {
+        color: #d474d3;
+      }
+
+      .nav-logo:hover {
+        opacity: 0.75;
+        color: #d474d3;
+      }
+
+      .nav-link {
+        font-family: 'Instrument Sans', sans-serif;
+        font-size: 20px;
+        font-weight: 400;
+        color: #000000;
+        text-decoration: none;
+        padding: 4px 0;
+        border-bottom: 2px solid transparent;
+        transition: color 0.2s, border-bottom-color 0.2s;
+      }
+
+      .nav-link:link {
+        color: #000000;
+      }
+
+      .nav-link:visited {
+        color: #000000;
+      }
+
+      .nav-link:hover {
+        color: #241a76;
+        border-bottom-color: #241a76;
+      }
+
+      .nav-link:active {
+        color: #d474d3;
+      }
+
+      .hero {
+        width: 1440px;
+        min-height: 720px;
+        position: relative;
+        padding-bottom: 80px;
+        background-color: #ffffff;
+      }
+
+      .hero-photos {
+        position: absolute;
+        left: 60px;
+        top: 20px;
+        width: 620px;
+        height: 520px;
+      }
+
+      .photo-one {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 490px;
+        height: auto;
+        z-index: 1;
+        transition: transform 0.3s;
+      }
+
+      .photo-one:hover {
+        transform: scale(1.02);
+      }
+
+      .photo-two {
+        position: absolute;
+        left: 80px;
+        top: 210px;
+        width: 510px;
+        height: auto;
+        z-index: 2;
+        transition: transform 0.3s;
+      }
+
+      .photo-two:hover {
+        transform: scale(1.02);
+      }
+
+      .hero-text {
+        position: absolute;
+        right: 120px;
+        top: 60px;
+        text-align: right;
+        max-width: 560px;
+      }
+
+      .hero-label {
+        font-family: 'Instrument Sans', sans-serif;
+        font-size: 20px;
+        color: #241a76;
+        margin-bottom: 6px;
+      }
+
+      .hero-title {
+        font-family: 'Instrument Serif', serif;
+        font-style: italic;
+        font-size: 64px;
+        color: #d474d3;
+        line-height: 1.1;
+        margin-bottom: 12px;
+      }
+
+      .hero-subtitle {
+        font-family: 'Instrument Sans', sans-serif;
+        font-size: 20px;
+        color: #241a76;
+        margin-bottom: 24px;
+      }
+
+      .btn-about {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background-color: #241a76;
+        color: #ffffff;
+        font-family: 'Instrument Sans', sans-serif;
+        font-size: 20px;
+        padding: 10px 18px;
+        border-radius: 13px;
+        border: 2px solid #241a76;
+        transition: background-color 0.2s, transform 0.15s;
+      }
+
+      .btn-about:link {
+        color: #ffffff;
+      }
+
+      .btn-about:visited {
+        color: #ffffff;
+        background-color: #241a76;
+      }
+
+      .btn-about:hover {
+        background-color: #1a1460;
+        border-color: #1a1460;
+        color: #ffffff;
+        transform: translateY(-1px);
+      }
+
+      .btn-about:active {
+        background-color: #d474d3;
+        border-color: #d474d3;
+        color: #ffffff;
+      }
+
+      .section-design {
+        width: 1440px;
+        padding: 80px 0 60px;
+        text-align: center;
+        background-color: #ffffff;
+      }
+
+      .section-title {
+        font-family: 'Instrument Serif', serif;
+        font-style: italic;
+        font-size: 64px;
+        color: #241a76;
+        margin-bottom: 12px;
+      }
+
+      .section-subtitle {
+        font-family: 'Instrument Sans', sans-serif;
+        font-size: 24px;
+        color: #454545;
+        margin-bottom: 48px;
+      }
+
+      .posters-row {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 39px;
+        width: 1200px;
+        margin: 0 auto 60px;
+      }
+
+      .poster-card {
+        height: 462px;
+        border-radius: 10px;
+        overflow: hidden;
+        background-color: #d3cfcf;
+        border: 1px solid #ccc;
+        transition: transform 0.25s, box-shadow 0.25s;
+      }
+
+      .poster-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.13);
+      }
+
+      .poster-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .works-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 29px;
+        width: 1200px;
+        margin: 0 auto;
+      }
+
+      .works-cards-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 29px;
+        width: 1200px;
+        margin: 48px auto 0;
+      }
+
+      .work-card {
+        background-color: #efefef;
+        border-radius: 10px;
+        height: 415px;
+        overflow: hidden;
+        position: relative;
+        display: block;
+        text-decoration: none;
+        border: 1px solid transparent;
+        transition: transform 0.25s, box-shadow 0.25s, border-color 0.2s;
+      }
+
+      .work-card:link {
+        color: #241a76;
+      }
+
+      .work-card:visited {
+        color: #241a76;
+        background-color: #efefef;
+      }
+
+      .work-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+        border-color: #ddd;
+        color: #241a76;
+      }
+
+      .work-card:active {
+        transform: translateY(0);
+      }
+
+      .work-img-wrapper {
+        position: absolute;
+        top: 30px;
+        left: 38px;
+        right: 38px;
+        height: 249px;
+        border-radius: 10px;
+        overflow: hidden;
+        background-color: #ffffff;
+      }
+
+      .work-img-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .work-title {
+        position: absolute;
+        bottom: 88px;
+        left: 38px;
+        font-family: 'Instrument Sans', sans-serif;
+        font-weight: 600;
+        font-size: 20px;
+        color: #241a76;
+        margin: 0;
+      }
+
+      .work-desc {
+        position: absolute;
+        bottom: 24px;
+        left: 38px;
+        right: 52px;
+        font-family: 'Instrument Sans', sans-serif;
+        font-size: 11px;
+        color: #241a76;
+        line-height: 1.5;
+        margin: 0;
+      }
+
+      .work-arrow {
+        position: absolute;
+        bottom: 76px;
+        right: 28px;
+        font-size: 18px;
+        color: #241a76;
+      }
+
+      .section-cta {
+        width: 1440px;
+        padding: 120px 120px 40px;
+        text-align: center;
+        background-color: #ffffff;
+      }
+
+      .contact-section {
+        width: 1440px;
+        padding: 30px 0 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 18px;
+        background-color: #ffffff;
+      }
+
+      .contact-card {
+        background-color: #efefef;
+        border-radius: 10px;
+        padding: 30px 40px;
+        width: 800px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-decoration: none;
+        font-family: 'Instrument Sans', sans-serif;
+        font-size: 22px;
+        border: 1px solid transparent;
+        transition: background-color 0.2s, transform 0.15s, border-color 0.2s;
+      }
+
+      .contact-card:link {
+        color: #000000;
+      }
+
+      .contact-card:visited {
+        color: #000000;
+        background-color: #efefef;
+      }
+
+      .contact-card:hover {
+        background-color: #e0e0e0;
+        transform: translateY(-2px);
+        border-color: #ccc;
+        color: #000000;
+      }
+
+      .contact-card:active {
+        transform: translateY(0);
+        background-color: #d5d5d5;
+      }
+
+      .contact-label {
+        font-weight: 400;
+        color: #000000;
+      }
+
+      .contact-value {
+        font-weight: 400;
+        color: #454545;
+      }
+
+      .about-hero {
+        width: 1200px;
+        margin: 0 auto;
+        padding: 60px 0 80px;
+        display: grid;
+        grid-template-columns: 1fr 431px;
+        gap: 60px;
+        align-items: start;
+      }
+
+      .about-page-title {
+        font-family: 'Instrument Serif', serif;
+        font-style: italic;
+        font-size: 64px;
+        color: #d474d3;
+        margin-bottom: 32px;
+      }
+
+      .about-bio {
+        font-family: 'Instrument Sans', sans-serif;
+        font-size: 20px;
+        color: #241a76;
+        line-height: 1.7;
+      }
+
+      .about-bio p {
+        color: #241a76;
+        margin-bottom: 20px;
+      }
+
+      .about-photo-wrap {
+        width: 431px;
+        height: 594px;
+        border-radius: 10px;
+        overflow: hidden;
+        border: 1px solid #eee;
+      }
+
+      .about-photo-wrap img {
+        width: 431px;
+        height: 594px;
+        object-fit: cover;
+        display: block;
+      }
+
+      .project-page {
+        width: 1440px;
+      }
+
+      .project-hero-text {
+        width: 1200px;
+        margin: 0 auto;
+        padding: 40px 0 0;
+        text-align: center;
+      }
+
+      .project-title {
+        font-family: 'Instrument Serif', serif;
+        font-style: italic;
+        font-size: 64px;
+        color: #241a76;
+        margin-bottom: 16px;
+      }
+
+      .project-subtitle {
+        font-family: 'Instrument Sans', sans-serif;
+        font-size: 24px;
+        color: #454545;
+        max-width: 798px;
+        margin: 0 auto 40px;
+        line-height: 1.5;
+      }
+
+      .project-cover {
+        width: 1200px;
+        margin: 0 auto 60px;
+        border-radius: 10px;
+        overflow: hidden;
+      }
+
+      .project-cover img {
+        width: 1200px;
+        height: auto;
+        display: block;
+      }
+
+      .project-overview {
+        width: 1200px;
+        margin: 0 auto 50px;
+      }
+
+      .project-overview-heading {
+        font-family: 'Instrument Sans', sans-serif;
+        font-weight: 600;
+        font-size: 32px;
+        color: #454545;
+        margin-bottom: 16px;
+      }
+
+      .project-overview-meta {
+        font-family: 'Instrument Sans', sans-serif;
+        font-size: 20px;
+        color: #454545;
+        line-height: 1.9;
+        margin-bottom: 20px;
+      }
+
+      .project-overview-meta strong {
+        font-weight: 700;
+        color: #241a76;
+      }
+
+      .project-overview-body {
+        font-family: 'Instrument Sans', sans-serif;
+        font-size: 20px;
+        color: #454545;
+        line-height: 1.7;
+        margin-bottom: 0;
+      }
+
+      .project-section {
+        width: 1200px;
+        margin: 0 auto 16px;
+      }
+
+      .project-section-title {
+        font-family: 'Instrument Sans', sans-serif;
+        font-weight: 500;
+        font-size: 40px;
+        color: #454545;
+        margin-bottom: 16px;
+      }
+
+      .project-section-text {
+        font-family: 'Instrument Sans', sans-serif;
+        font-size: 24px;
+        color: #454545;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+
+      .project-section-text strong {
+        font-weight: 700;
+      }
+
+      .project-img {
+        width: 1200px;
+        margin: 0 auto 60px;
+      }
+
+      .project-img img {
+        width: 1200px;
+        height: auto;
+        display: block;
+        border-radius: 10px;
+      }
+
+      .project-img-2col {
+        width: 1200px;
+        margin: 0 auto 30px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+      }
+
+      .project-img-2col img {
+        width: 100%;
+        height: 340px;
+        display: block;
+        border-radius: 10px;
+        object-fit: cover;
+      }
+
+      .project-table-wrap {
+        width: 1200px;
+        margin: 0 auto 50px;
+        overflow-x: auto;
+      }
+
+      table.project-info {
+        width: 100%;
+        border-collapse: collapse;
+        font-family: 'Instrument Sans', sans-serif;
+        font-size: 18px;
+        background-color: #ffffff;
+        border: 1px solid #ddd;
+      }
+
+      table.project-info caption {
+        font-family: 'Instrument Sans', sans-serif;
+        font-weight: 600;
+        font-size: 20px;
+        color: #241a76;
+        text-align: left;
+        padding: 0 0 12px 0;
+        caption-side: top;
+      }
+
+      table.project-info th {
+        background-color: #241a76;
+        color: #ffffff;
+        font-weight: 600;
+        padding: 14px 20px;
+        text-align: left;
+        border-bottom: 2px solid #d474d3;
+      }
+
+      table.project-info td {
+        padding: 12px 20px;
+        border-bottom: 1px solid #eee;
+        color: #454545;
+        vertical-align: top;
+      }
+
+      table.project-info tr:last-child td {
+        border-bottom: none;
+      }
+
+      table.project-info tr:nth-child(even) td {
+        background-color: #f9f9f9;
+      }
+
+      .project-prob-img {
+        width: 1200px;
+        margin: 0 auto 60px;
+        overflow: hidden;
+      }
+
+      .project-prob-img img {
+        float: left;
+        width: 1200px;
+        height: auto;
+        display: block;
+        border-radius: 10px;
+        clear: both;
+      }
+
+      .project-nav {
+        width: 1200px;
+        margin: 60px auto 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 40px;
+      }
+
+      .project-nav-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background-color: #efefef;
+        border-radius: 13px;
+        padding: 14px 24px;
+        font-family: 'Instrument Sans', sans-serif;
+        font-size: 18px;
+        font-weight: 600;
+        text-decoration: none;
+        border: 1px solid transparent;
+        transition: background-color 0.2s, transform 0.15s, border-color 0.2s;
+      }
+
+      .project-nav-btn:link {
+        color: #241a76;
+      }
+
+      .project-nav-btn:visited {
+        color: #241a76;
+        background-color: #efefef;
+      }
+
+      .project-nav-btn:hover {
+        background-color: #e0e0e0;
+        transform: translateY(-2px);
+        border-color: #ccc;
+        color: #241a76;
+      }
+
+      .project-nav-btn:active {
+        transform: translateY(0);
+        background-color: #d5d5d5;
+      }
+
+      .project-nav-btn.invisible {
+        visibility: hidden;
+        pointer-events: none;
+      }
+    </style>
+  </head>
+  <body>
+
+    <nav>
+      <a href="#works" class="nav-link">Works</a>
+      <a href="#home" class="nav-logo">Alyanna Fuentes</a>
+      <a href="#about" class="nav-link">About Me</a>
+    </nav>
+
+    <!-- WORKS -->
+    <div id="works" class="page">
+      <div style="width: 1200px; margin: 0 auto;">
+        <div style="text-align: center; padding: 60px 0 12px;">
+          <h1 style="font-family: 'Instrument Serif', serif; font-style: italic; font-size: 64px; color: #241a76; margin-bottom: 12px;">Works</h1>
+          <p style="font-family: 'Instrument Sans', sans-serif; font-size: 24px; color: #454545; margin-bottom: 48px;">From concept to launch — projects that helped me grow.</p>
+        </div>
+        <div class="works-cards-grid">
+          <a class="work-card" href="#mealmate">
+            <div class="work-img-wrapper">
+              <img src="works mealmate.png" width="414" height="249" alt="Mealmate project cover" />
+            </div>
+            <p class="work-title">Mealmate</p>
+            <p class="work-desc">An all in one solution for university students looking to improve their cooking skills and make cooking a part of their busy lives.</p>
+            <span class="work-arrow">&#x2192;</span>
+          </a>
+          <a class="work-card" href="#visipal">
+            <div class="work-img-wrapper">
+              <img src="works visipal.png" width="414" height="249" alt="Visipal project cover" />
+            </div>
+            <p class="work-title">Visipal</p>
+            <p class="work-desc">A Chrome extension that helps visually impaired students explore the web with clarity, confidence, and ease.</p>
+            <span class="work-arrow">&#x2192;</span>
+          </a>
+          <a class="work-card" href="#overlap">
+            <div class="work-img-wrapper">
+              <img src="works overlap.png" width="414" height="249" alt="Overlap project cover" />
+            </div>
+            <p class="work-title">Overlap</p>
+            <p class="work-desc">Overlap is a remote-work communication platform that strengthens team connection, streamlines cross-time zone collaboration, and supports smoother onboarding.</p>
+            <span class="work-arrow">&#x2192;</span>
+          </a>
+          <a class="work-card" href="#ecobloom">
+            <div class="work-img-wrapper">
+              <img src="works ecobloom.png" width="414" height="249" alt="Ecobloom project cover" />
+            </div>
+            <p class="work-title">Ecobloom</p>
+            <p class="work-desc">EcoBloom is a gamified sustainability app that motivates users to build better environmental habits through challenges, rewards, and a growing virtual garden.</p>
+            <span class="work-arrow">&#x2192;</span>
+          </a>
+        </div>
+      </div>
+      <section class="section-cta">
+        <h2 class="section-title">Ready to build something amazing?</h2>
+        <p class="section-subtitle">I'd love to connect!</p>
+      </section>
+      <div class="contact-section">
+        <a href="mailto:asfuente@uwaterloo.ca" class="contact-card">
+          <span class="contact-label">Email</span>
+          <span class="contact-value">asfuente@uwaterloo.ca</span>
+        </a>
+        <a href="https://linkedin.com/in/alyanna-f" target="_blank" rel="noopener noreferrer" class="contact-card">
+          <span class="contact-label">Linkedin</span>
+          <span class="contact-value">linkedin.com/in/alyanna-f</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- ABOUT -->
+    <div id="about" class="page">
+      <div class="about-hero">
+        <div class="about-left">
+          <h1 class="about-page-title">About Me</h1>
+          <div class="about-bio">
+            <p>I'm a designer passionate about creating thoughtful digital experiences that feel intuitive, meaningful, and human. With a background in product design, UX, marketing, and visual storytelling, I love building work that balances creativity with functionality.</p>
+            <p>I'm especially interested in how design can create connection, make information more accessible, and leave a lasting impact. Whether I'm designing a product, developing a brand, or shaping a user journey, I'm driven by the idea that good design should not only look good, but feel purposeful too.</p>
+            <p>When I'm not designing, you can probably find me exploring new restaurants, going to concerts, hanging out with friends, or discovering new music.</p>
+          </div>
+        </div>
+        <div class="about-photo-wrap">
+          <img src="alyphoto3.png" width="431" height="594" alt="Alyanna Fuentes standing outdoors, smiling" />
+        </div>
+      </div>
+      <section class="section-cta">
+        <h2 class="section-title">Ready to build something amazing?</h2>
+        <p class="section-subtitle">I'd love to connect!</p>
+      </section>
+      <div class="contact-section">
+        <a href="mailto:asfuente@uwaterloo.ca" class="contact-card">
+          <span class="contact-label">Email</span>
+          <span class="contact-value">asfuente@uwaterloo.ca</span>
+        </a>
+        <a href="https://linkedin.com/in/alyanna-f" target="_blank" rel="noopener noreferrer" class="contact-card">
+          <span class="contact-label">Linkedin</span>
+          <span class="contact-value">linkedin.com/in/alyanna-f</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- MEALMATE -->
+    <div id="mealmate" class="page">
+      <div class="project-page">
+        <div class="project-hero-text">
+          <h1 class="project-title">MealMate</h1>
+          <p class="project-subtitle">An all in one solution for university students looking to improve their cooking skills and make cooking a part of their busy lives.</p>
+        </div>
+        <div class="project-cover">
+          <img src="works mealmate.png" width="1200" height="auto" alt="MealMate full project cover" />
+        </div>
+        <div class="project-table-wrap">
+          <table class="project-info">
+            <caption>Project Details</caption>
+            <thead>
+              <tr>
+                <th>Category</th>
+                <th>Detail</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Project</td>
+                <td>MealMate — All-in-one Cooking App</td>
+              </tr>
+              <tr>
+                <td>Context</td>
+                <td>Course Project, GBDA 228</td>
+              </tr>
+              <tr>
+                <td>Timeline</td>
+                <td>Winter 2025</td>
+              </tr>
+              <tr>
+                <td>My Role</td>
+                <td>UX Design, Product Thinking, Prototyping</td>
+              </tr>
+              <tr>
+                <td>Tools</td>
+                <td>Figma, FigJam</td>
+              </tr>
+              <tr>
+                <td>Platform</td>
+                <td>iOS Mobile App</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="project-prob-img">
+          <img src="mealmate problem.png" width="1200" height="auto" alt="MealMate problem statement" />
+        </div>
+        <div class="project-section">
+          <h2 class="project-section-title">Mealmate</h2>
+        </div>
+        <div class="project-img">
+          <img src="mealmate image one.png" width="1200" height="auto" alt="Mealmate home and welcome screens" />
+        </div>
+        <div class="project-section">
+          <h2 class="project-section-title">AI Ingredient Detection &amp; Recipe Suggestor</h2>
+          <p class="project-section-text">Let's face it—our parents buy us groceries, but using them efficiently isn't always easy. To solve this, we designed a smart ingredient-detecting camera that generates personalized recipes based on difficulty and prep time.</p>
+        </div>
+        <div class="project-img">
+          <img src="mealmate image two.png" width="1200" height="auto" alt="Mealmate AI ingredient detection screens" />
+        </div>
+        <div class="project-section">
+          <h2 class="project-section-title">Guided Cooking</h2>
+          <p class="project-section-text">Once you select a recipe, you can follow along through both video and text, complete with clear measurement breakdowns for every ingredient.</p>
+        </div>
+        <div class="project-img">
+          <img src="mealmate image three.png" width="1200" height="auto" alt="Mealmate guided cooking screens" />
+        </div>
+        <div class="project-section">
+          <h2 class="project-section-title">Community</h2>
+          <p class="project-section-text">After cooking, you can upload a photo of your dish for your friends and university community to see. It's a space to celebrate growth, cheer each other on, and build connections through food.</p>
+        </div>
+        <div class="project-img">
+          <img src="mealmate image four.png" width="1200" height="auto" alt="Mealmate community feed" />
+        </div>
+        <div class="project-section">
+          <h2 class="project-section-title">Lessons Learned</h2>
+          <p class="project-section-text">Building MealMate taught us that even simple daily decisions—like what to cook—can feel overwhelming for students navigating independence for the first time. By blending AI, community, and accessible design, we learned how powerful it can be to turn everyday challenges into opportunities for connection and confidence.</p>
+        </div>
+        <div class="project-nav">
+          <span class="project-nav-btn invisible">&#x2190; Previous</span>
+          <a href="#visipal" class="project-nav-btn">Next Work &#x2192;</a>
+        </div>
+        <section class="section-cta">
+          <h2 class="section-title">Ready to build something amazing?</h2>
+          <p class="section-subtitle">I'd love to connect!</p>
+        </section>
+        <div class="contact-section">
+          <a href="mailto:asfuente@uwaterloo.ca" class="contact-card">
+            <span class="contact-label">Email</span>
+            <span class="contact-value">asfuente@uwaterloo.ca</span>
+          </a>
+          <a href="https://linkedin.com/in/alyanna-f" target="_blank" rel="noopener noreferrer" class="contact-card">
+            <span class="contact-label">Linkedin</span>
+            <span class="contact-value">linkedin.com/in/alyanna-f</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- VISIPAL -->
+    <div id="visipal" class="page">
+      <div class="project-page">
+        <div class="project-hero-text">
+          <h1 class="project-title">Visipal</h1>
+          <p class="project-subtitle">A Chrome extension that helps visually impaired students explore the web with clarity, confidence, and ease.</p>
+        </div>
+        <div class="project-cover">
+          <img src="works visipal.png" width="1200" height="auto" alt="Visipal project cover" />
+        </div>
+        <div class="project-table-wrap">
+          <table class="project-info">
+            <caption>Project Details</caption>
+            <thead>
+              <tr>
+                <th>Category</th>
+                <th>Detail</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Project</td>
+                <td>Visipal — Accessible Reading Chrome Extension</td>
+              </tr>
+              <tr>
+                <td>Award</td>
+                <td>UW/UX Flow Designathon — First Place</td>
+              </tr>
+              <tr>
+                <td>Timeline</td>
+                <td>7 hours (2025)</td>
+              </tr>
+              <tr>
+                <td>My Role</td>
+                <td>Product Ideation, Research, Product Designer</td>
+              </tr>
+              <tr>
+                <td>Tools</td>
+                <td>Figma</td>
+              </tr>
+              <tr>
+                <td>Platform</td>
+                <td>Chrome Extension (Web)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="project-overview">
+          <p class="project-overview-heading">Project Overview</p>
+          <p class="project-overview-meta">
+            <strong>UW/UX Flow Designathon / First Place</strong><br>
+            <strong>Timeline</strong>: 7 hours (2025)<br>
+            <strong>My Role</strong>: Product Ideation, Research, Product Designer
+          </p>
+          <p class="project-overview-body">As the person in charge of product ideation, I chose to explore a Chrome extension because it improves an existing experience rather than creating a completely new one. While researching accessibility tools, I noticed that many older reading aids lacked customization and didn't support the specific needs of children with visual impairments. That insight shaped the direction of Visipal.</p>
+        </div>
+        <div class="project-prob-img">
+          <img src="visipal user statement.png" width="1200" height="auto" alt="Visipal user statement" />
+        </div>
+        <div class="project-section">
+          <h2 class="project-section-title">User Persona</h2>
+          <p class="project-section-text"><strong>Alex is an energetic 8-year-old who's endlessly curious—especially about snakes, animals, and anything he can read about online.</strong> But because he has nystagmus and low vision, the digital world isn't always built for him.</p>
+          <p class="project-section-text"><strong>What Alex truly wants is the ability to read with ease, explore topics he loves, and learn at the same pace as his peers.</strong> He's eager, motivated, and capable—he just needs a digital environment that meets him where he is.</p>
+        </div>
+        <div class="project-img">
+          <img src="visipal userpersona.png" width="1200" height="auto" alt="Visipal user persona card for Alex" />
+        </div>
+        <div class="project-section">
+          <h2 class="project-section-title">Emphasis on Customization in Onboarding</h2>
+          <p class="project-section-text">The onboarding flow helps each user personalize VisiPal to their specific visual needs in four simple steps — from choosing support type, to text settings, colour themes, and smart learning tools like AI summaries and Focus Mode.</p>
+        </div>
+        <div class="project-img-2col">
+          <img src="visipal1.png" width="585" height="340" alt="Visipal onboarding step 1" />
+          <img src="visipal2.png" width="585" height="340" alt="Visipal onboarding step 2" />
+        </div>
+        <div class="project-img-2col">
+          <img src="visipal3.png" width="585" height="340" alt="Visipal onboarding step 3" />
+          <img src="visipal4.png" width="585" height="340" alt="Visipal onboarding step 4" />
+        </div>
+        <div class="project-section">
+          <h2 class="project-section-title">Before VisiPal</h2>
+        </div>
+        <div class="project-img">
+          <img src="visipal user statement.png" width="1200" height="auto" alt="Before VisiPal" />
+        </div>
+        <div class="project-section">
+          <h2 class="project-section-title">After VisiPal</h2>
+        </div>
+        <div class="project-img">
+          <img src="visipal userpersona.png" width="1200" height="auto" alt="After VisiPal" />
+        </div>
+        <div class="project-section">
+          <h2 class="project-section-title">VisiPods</h2>
+          <p class="project-section-text"><strong>VisiPods is a shared learning hub where students can post what they're discovering, celebrate their curiosity, and feel empowered by seeing how much they're learning.</strong> It creates a supportive space where kids can explore together.</p>
+        </div>
+        <div class="project-img">
+          <img src="visipal userpersona.png" width="1200" height="auto" alt="VisiPods community hub" />
+        </div>
+        <div class="project-section">
+          <h2 class="project-section-title">Lessons Learned</h2>
+          <p class="project-section-text">VisiPal showed me how meaningful it is to design for real, specific needs—especially for kids like Alex, who are curious, eager, and often overlooked in digital accessibility. Ultimately, VisiPal is a reminder that empathetic, intentional design doesn't just solve problems—it opens doors.</p>
+        </div>
+        <div class="project-nav">
+          <a href="#mealmate" class="project-nav-btn">&#x2190; Previous Work</a>
+          <a href="#overlap" class="project-nav-btn">Next Work &#x2192;</a>
+        </div>
+        <section class="section-cta">
+          <h2 class="section-title">Ready to build something amazing?</h2>
+          <p class="section-subtitle">I'd love to connect!</p>
+        </section>
+        <div class="contact-section">
+          <a href="mailto:asfuente@uwaterloo.ca" class="contact-card">
+            <span class="contact-label">Email</span>
+            <span class="contact-value">asfuente@uwaterloo.ca</span>
+          </a>
+          <a href="https://linkedin.com/in/alyanna-f" target="_blank" rel="noopener noreferrer" class="contact-card">
+            <span class="contact-label">Linkedin</span>
+            <span class="contact-value">linkedin.com/in/alyanna-f</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- OVERLAP -->
+    <div id="overlap" class="page">
+      <div class="project-page">
+        <div class="project-hero-text">
+          <h1 class="project-title">Overlap</h1>
+          <p class="project-subtitle">Overlap is a remote-work communication platform that strengthens team connection, streamlines cross–time zone collaboration, and supports smoother onboarding for faster, clearer project alignment.</p>
+        </div>
+        <div class="project-cover">
+          <img src="works overlap.png" width="1200" height="auto" alt="Overlap project cover" />
+        </div>
+        <div class="project-table-wrap">
+          <table class="project-info">
+            <caption>Project Details</caption>
+            <thead>
+              <tr>
+                <th>Category</th>
+                <th>Detail</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Project</td>
+                <td>Overlap — Remote Work Communication Platform</td>
+              </tr>
+              <tr>
+                <td>Award</td>
+                <td>GBDA Soc Innovation Challenge — Second Place</td>
+              </tr>
+              <tr>
+                <td>Timeline</td>
+                <td>7 hours (2025)</td>
+              </tr>
+              <tr>
+                <td>My Role</td>
+                <td>Product Thinking, Business Modelling</td>
+              </tr>
+              <tr>
+                <td>Tools</td>
+                <td>Figma, FigJam</td>
+              </tr>
+              <tr>
+                <td>Platform</td>
+                <td>Desktop / Mobile Web App</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="project-overview">
+          <p class="project-overview-heading">Project Overview</p>
+          <p class="project-overview-meta">
+            <strong>GBDA Soc Innovation Challenge / Second Place</strong><br>
+            <strong>Timeline</strong>: 7 hours (2025)<br>
+            <strong>My Role</strong>: Product Thinking, Business Modelling
+          </p>
+          <p class="project-overview-body">As a first-year university student, I experienced firsthand how overwhelming it can be to navigate remote collaboration across time zones. How can we make remote work feel less lonely and more connected—no matter where you are?</p>
+        </div>
+        <div class="project-section">
+          <h2 class="project-section-title">Onboarding</h2>
+          <p class="project-section-text">Overlap includes a connection-focused onboarding flow that goes beyond job titles. Instead of only collecting your role and department, it invites you to share a short personal bio and select your interests. This information appears on your profile, giving teammates an easy way to connect with you on a more human level.</p>
+        </div>
+        <div class="project-img">
+          <img src="onboarding mosaic.png" width="1200" height="auto" alt="Overlap onboarding mosaic" />
+        </div>
+        <div class="project-section">
+          <h2 class="project-section-title">Hangouts</h2>
+          <p class="project-section-text">The Meet feature helps remote teammates build meaningful connections beyond their usual circles. Overlap pairs you with a coworker for a casual Hangout based on your availability, preferred frequency, and shared interests. It's a simple way to spark authentic relationships and strengthen team culture, no matter the distance.</p>
+        </div>
+        <div class="project-img">
+          <img src="hangouts.png" width="1200" height="auto" alt="Overlap Hangouts screens" />
+        </div>
+        <div class="project-section">
+          <h2 class="project-section-title">Activity and Rooms</h2>
+          <p class="project-section-text">The Activity tab makes it easy to stay aligned, even if you missed a meeting. You can review meeting summaries, check who attended, revisit the taskboard, and browse any polls that were shared. Within Rooms, explore each department's workspace with shared community files.</p>
+        </div>
+        <div class="project-img">
+          <img src="activity.png" width="1200" height="auto" alt="Overlap Activity and Rooms screens" />
+        </div>
+        <div class="project-section">
+          <h2 class="project-section-title">Lessons Learned</h2>
+          <p class="project-section-text">Working on Overlap taught me how important it is to design tools that balance efficiency with genuine human connection. Remote teams don't just need clearer communication—they need spaces that help them understand each other, build trust, and collaborate confidently across time zones.</p>
+        </div>
+        <div class="project-nav">
+          <a href="#visipal" class="project-nav-btn">&#x2190; Previous Work</a>
+          <a href="#ecobloom" class="project-nav-btn">Next Work &#x2192;</a>
+        </div>
+        <section class="section-cta">
+          <h2 class="section-title">Ready to build something amazing?</h2>
+          <p class="section-subtitle">I'd love to connect!</p>
+        </section>
+        <div class="contact-section">
+          <a href="mailto:asfuente@uwaterloo.ca" class="contact-card">
+            <span class="contact-label">Email</span>
+            <span class="contact-value">asfuente@uwaterloo.ca</span>
+          </a>
+          <a href="https://linkedin.com/in/alyanna-f" target="_blank" rel="noopener noreferrer" class="contact-card">
+            <span class="contact-label">Linkedin</span>
+            <span class="contact-value">linkedin.com/in/alyanna-f</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ECOBLOOM -->
+    <div id="ecobloom" class="page">
+      <div class="project-page">
+        <div class="project-hero-text">
+          <h1 class="project-title">EcoBloom</h1>
+          <p class="project-subtitle">EcoBloom is a gamified sustainability app that motivates users to build better environmental habits through challenges, rewards, and a growing virtual garden.</p>
+        </div>
+        <div class="project-cover">
+          <img src="works ecobloom.png" width="1200" height="auto" alt="Ecobloom project cover" />
+        </div>
+        <div class="project-table-wrap">
+          <table class="project-info">
+            <caption>Project Details</caption>
+            <thead>
+              <tr>
+                <th>Category</th>
+                <th>Detail</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Project</td>
+                <td>EcoBloom — Gamified Sustainability App</td>
+              </tr>
+              <tr>
+                <td>Award</td>
+                <td>UW/UX Fuse Designathon — UW/UX Pick</td>
+              </tr>
+              <tr>
+                <td>Timeline</td>
+                <td>8 hours (2024)</td>
+              </tr>
+              <tr>
+                <td>My Role</td>
+                <td>Product Designer, User Researcher</td>
+              </tr>
+              <tr>
+                <td>Tools</td>
+                <td>Figma, FigJam</td>
+              </tr>
+              <tr>
+                <td>Platform</td>
+                <td>iOS Mobile App</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="project-overview">
+          <p class="project-overview-heading">Project Overview</p>
+          <p class="project-overview-meta">
+            <strong>UW/UX Fuse Designathon / UW/UX Pick</strong><br>
+            <strong>Timeline</strong>: 8 hours (2024)<br>
+            <strong>My Role</strong>: Product Designer, User Researcher
+          </p>
+          <p class="project-overview-body">EcoBloom reimagines sustainable habits as a fun, community-driven challenge for students. The app tracks everyday eco-friendly actions and turns them into points that contribute to both personal progress and friendly competition. With school and interschool leaderboards, students can see their collective impact and stay motivated through shared goals.</p>
+        </div>
+        <div class="project-prob-img">
+          <img src="ecobloom prob.png" width="1200" height="auto" alt="Ecobloom problem statement" />
+        </div>
+        <div class="project-section">
+          <h2 class="project-section-title">User Persona</h2>
+        </div>
+        <div class="project-img">
+          <img src="ecobloom persona.png" width="1200" height="auto" alt="Ecobloom user persona" />
+        </div>
+        <div class="project-section">
+          <h2 class="project-section-title">Habit Tracker</h2>
+          <p class="project-section-text">EcoBloom turns sustainable habits into a rewarding, gamified experience. Each eco-friendly action you complete earns positive feedback and moves you closer to measurable progress. Every task contributes to growing a new plant in your personal garden.</p>
+        </div>
+        <div class="project-img">
+          <img src="eco habit tracker.png" width="1200" height="auto" alt="Ecobloom habit tracker screens" />
+        </div>
+        <div class="project-section">
+          <h2 class="project-section-title">Leaderboard</h2>
+          <p class="project-section-text">EcoBloom's leaderboards bring sustainability to life at both the school and interschool level. You can see how your community ranks, explore the eco-friendly actions students are taking, and feel motivated by the collective impact.</p>
+        </div>
+        <div class="project-img">
+          <img src="eco leaderboard.png" width="1200" height="auto" alt="Ecobloom leaderboard screens" />
+        </div>
+        <div class="project-section">
+          <h2 class="project-section-title">Lessons Learned</h2>
+          <p class="project-section-text">Working on EcoBloom showed me how powerful gamification can be when it's paired with real-world impact. I learned that students are far more motivated when sustainability feels fun, visual, and community-driven. Ultimately, this project reinforced that encouraging environmental change isn't just about tracking behavior—it's about sparking pride, connection, and a sense of belonging around a common goal.</p>
+        </div>
+        <div class="project-nav">
+          <a href="#overlap" class="project-nav-btn">&#x2190; Previous Work</a>
+          <span class="project-nav-btn invisible">Next Work &#x2192;</span>
+        </div>
+        <section class="section-cta">
+          <h2 class="section-title">Ready to build something amazing?</h2>
+          <p class="section-subtitle">I'd love to connect!</p>
+        </section>
+        <div class="contact-section">
+          <a href="mailto:asfuente@uwaterloo.ca" class="contact-card">
+            <span class="contact-label">Email</span>
+            <span class="contact-value">asfuente@uwaterloo.ca</span>
+          </a>
+          <a href="https://linkedin.com/in/alyanna-f" target="_blank" rel="noopener noreferrer" class="contact-card">
+            <span class="contact-label">Linkedin</span>
+            <span class="contact-value">linkedin.com/in/alyanna-f</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- HOME — MUST BE LAST -->
+    <div id="home" class="page">
+      <section class="hero">
+        <div class="hero-photos">
+          <img class="photo-one" src="alyphotoone.png" width="490" height="auto" alt="Alyanna Fuentes at Griffith Observatory at sunset" />
+          <img class="photo-two" src="alyphototwo.png" width="510" height="auto" alt="Alyanna Fuentes smiling outdoors at night" />
+        </div>
+        <div class="hero-text">
+          <p class="hero-label">This is Aly</p>
+          <h1 class="hero-title">Product Designer &amp;<br>Growth Marketer</h1>
+          <p class="hero-subtitle">you can count on!</p>
+          <a href="#about" class="btn-about">About Me &#x2192;</a>
+        </div>
+      </section>
+      <section class="section-design">
+        <h2 class="section-title">Design in action.</h2>
+        <p class="section-subtitle">Crafting meaningful experiences for the community.</p>
+        <div class="posters-row">
+          <div class="poster-card">
+            <img src="alyposter1.jpg" width="374" height="462" alt="Alyanna's Take on Good Design — poster one" />
+          </div>
+          <div class="poster-card">
+            <img src="alyposter2.jpg" width="374" height="462" alt="Where You At — poster two" />
+          </div>
+          <div class="poster-card">
+            <img src="alyposter3.jpg" width="374" height="462" alt="My Design Story — poster three" />
+          </div>
+        </div>
+        <div class="works-grid">
+          <a class="work-card" href="#mealmate">
+            <div class="work-img-wrapper">
+              <img src="mealmatecover.jpg" width="414" height="249" alt="Mealmate project cover" />
+            </div>
+            <p class="work-title">Mealmate</p>
+            <p class="work-desc">An all in one solution for university students looking to improve their cooking skills and make cooking a part of their busy lives.</p>
+            <span class="work-arrow">&#x2192;</span>
+          </a>
+          <a class="work-card" href="#visipal">
+            <div class="work-img-wrapper">
+              <img src="visipalcover.jpg" width="414" height="249" alt="Visipal project cover" />
+            </div>
+            <p class="work-title">Visipal</p>
+            <p class="work-desc">A Chrome extension that helps visually impaired students explore the web with clarity, confidence, and ease.</p>
+            <span class="work-arrow">&#x2192;</span>
+          </a>
+          <a class="work-card" href="#overlap">
+            <div class="work-img-wrapper">
+              <img src="overlapcover.jpg" width="414" height="249" alt="Overlap project cover" />
+            </div>
+            <p class="work-title">Overlap</p>
+            <p class="work-desc">Overlap is a remote-work communication platform that strengthens team connection, streamlines cross-time zone collaboration, and supports smoother onboarding.</p>
+            <span class="work-arrow">&#x2192;</span>
+          </a>
+          <a class="work-card" href="#ecobloom">
+            <div class="work-img-wrapper">
+              <img src="ecobloomcover.jpg" width="414" height="249" alt="Ecobloom project cover" />
+            </div>
+            <p class="work-title">Ecobloom</p>
+            <p class="work-desc">EcoBloom is a gamified sustainability app that motivates users to build better environmental habits through challenges, rewards, and a growing virtual garden.</p>
+            <span class="work-arrow">&#x2192;</span>
+          </a>
+        </div>
+      </section>
+      <section class="section-cta">
+        <h2 class="section-title">Ready to build something amazing?</h2>
+        <p class="section-subtitle">I'd love to connect!</p>
+      </section>
+      <div class="contact-section">
+        <a href="mailto:asfuente@uwaterloo.ca" class="contact-card">
+          <span class="contact-label">Email</span>
+          <span class="contact-value">asfuente@uwaterloo.ca</span>
+        </a>
+        <a href="https://linkedin.com/in/alyanna-f" target="_blank" rel="noopener noreferrer" class="contact-card">
+          <span class="contact-label">Linkedin</span>
+          <span class="contact-value">linkedin.com/in/alyanna-f</span>
+        </a>
+      </div>
+    </div>
+
+  </body>
+</html>
